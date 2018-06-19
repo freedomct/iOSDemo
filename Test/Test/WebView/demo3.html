@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js-demo</title>
+    <style>
+        button {
+            border: 1px solid #999;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="toCallAppFunc1()">调用app分享</button>
+    <br />
+    <br />
+    <button onclick="toCallAppFunc2()">调用app设置title</button>
+    <br />
+    <br />
+    <button onclick="toCallAppFunc3()">获取APP基本信息</button>
+</body>
+<script>
+    console.log('navigator.userAgent', navigator.userAgent)
+
+
+    function toCallAppFunc1() {
+        toCallAppFunc(
+            'share', {
+                title: "我是分享标题",
+                dec: "我是分享详情"
+            },
+            function () {
+                console.log('成功回调1', arguments)
+                alert('成功回调1', arguments)
+            },
+            function () {
+                console.log('失败回调1', arguments)
+                alert('失败回调1', arguments)
+            }
+        )
+    }
+
+    function toCallAppFunc2() {
+        toCallAppFunc(
+            'setTitle', {
+                text: "我是页面title"
+            },
+            function () {
+                console.log('成功回调2', arguments)
+                alert('成功回调2', arguments)
+            },
+            function () {
+                console.log('失败回调2', arguments)
+                alert('失败回调2', arguments)
+            }
+        )
+    }
+
+    function toCallAppFunc3() {
+        toCallAppFunc(
+            'getInfo', {},
+            function () {
+                console.log('成功回调3', arguments)
+                alert('成功回调3', arguments)
+            },
+            function () {
+                console.log('失败回调3', arguments)
+                alert('失败回调3', arguments)
+            }
+        )
+    }
+
+    /**
+     * @name{string} 句柄
+     * @param{object} 对应句柄的参数
+     * @successCallback{function|string} 执行完句柄对应方法成功后,APP的回调
+     * @failCallback{function|string} 执行完句柄对应方法失败后,APP的回调
+     */
+    function toCallAppFunc(name, param, successCallback, failCallback) {
+
+        if (!isWDPHAPP) {
+            console.log("不在APP环境内")
+            return false
+        }
+
+        var ios_jsBridge_Name = 'WDPH_iOS_'
+        var android_jsBridge_Name = 'jsBridge_WDPH'
+
+        //test
+        // window[android_jsBridge_Name] = {}
+        // window[android_jsBridge_Name][name] = function () {
+
+        // }
+
+        var timestamp = new Date().getTime()
+
+        var successCB_NAME = 'WDPH_APP_CB_SUCCESS_' + timestamp
+        var failCB_NAME = 'WDPH_APP_CB_FAIL_' + timestamp
+
+        window[successCB_NAME] = function () {
+            //如果是函数，直接执行
+            typeof successCallback === 'function' && successCallback(arguments)
+            //如果是函数名，执行window对象下的函数
+            typeof successCallback === 'string' && typeof window[successCallback] === 'function' && window[
+                successCallback](arguments)
+        }
+
+        window[failCB_NAME] = function () {
+            //如果是函数，直接执行
+            typeof failCallback === 'function' && failCallback(arguments)
+            //如果是函数名，执行window对象下的函数
+            typeof failCallback === 'string' && typeof window[failCallback] === 'function' && window[failCallback](
+                arguments)
+        }
+
+        var system = getSysType()
+
+        console.log('=======')
+
+        console.log('在window下注册以下回调方法:', successCB_NAME, failCB_NAME)
+
+        if (system === 'ios') {
+            //ios
+
+            console.log('调用' + system + ':' + 'window.webkit.messageHandlers' + '.' + name)
+
+            window.webkit.messageHandlers[name].postMessage({
+                params: JSON.stringify(param),
+                successCallbackFuncName: successCB_NAME,
+                failCallbackFuncName: failCB_NAME
+            })
+
+        } else if (system === 'android') {
+            //android
+            if (typeof window[android_jsBridge_Name] !== 'undefined') {
+                window[android_jsBridge_Name][name](
+                    JSON.stringify(param),
+                    successCB_NAME,
+                    failCB_NAME
+                )
+                console.log('调用' + system + ':' + android_jsBridge_Name + '.' + name)
+            } else {
+                console.error('window对象中没有注入' + android_jsBridge_Name)
+            }
+        }
+    }
+
+    function getSysType() {
+        var u = navigator.userAgent,
+            app = navigator.appVersion;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g
+        var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if (isAndroid) {
+            return 'android'
+        }
+        if (isIOS) {
+            return 'ios'
+        }
+    }
+
+    //在ua中判断是否在app环境
+    function isWDPHAPP() {
+        return true
+    }
+</script>
+
+</html>

@@ -1,0 +1,18 @@
+
+platform :ios,'8.0'
+#use_frameworks!
+use_frameworks!
+target 'Test' do
+   pod 'Masonry'
+   pod 'MBProgressHUD'
+   pod 'SGQRCode'
+   pod 'ComponentKit'
+#   pod 'Charts'
+
+   pod 'ReactiveCocoa', '~> 2.5'
+   pod 'AFNetworking'
+   pod 'ZLPhotoBrowser'
+   pod 'lottie-ios', '~> 2.5.0'
+   pod 'YYCache'
+
+end
