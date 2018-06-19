@@ -2,8 +2,8 @@
 //  WDBaseWebVC.m
 //  WDJR
 //
-//  Created by xueyaoji on 2018/1/22.
-//  Copyright © 2018年 WANDAPUHUI. All rights reserved.
+//  Created by fengzi on 2018/1/22.
+//  Copyright © 2018年 fengzi. All rights reserved.
 //
 #import <WebKit/WebKit.h>
 #import "WDBaseWebVC.h"
@@ -58,14 +58,6 @@
     self.progressView.trackTintColor = [UIColor blackColor];
     [self.view addSubview:self.progressView];
 
-    [self.progressView mas_makeConstraints:^(MASConstraintMaker *make) {
-       
-        make.top.mas_equalTo(0);
-        make.left.and.right.mas_equalTo(0);
-//        make.height.mas_equalTo(5);
-    }];
-
-    
 }
 
 #pragma mark - - WKNavigationDelegate

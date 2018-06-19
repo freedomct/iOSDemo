@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-
 @interface IBAUploadFileManager : NSObject
 
 

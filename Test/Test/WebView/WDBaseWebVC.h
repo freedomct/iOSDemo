@@ -2,12 +2,12 @@
 //  WDBaseWebVC.h
 //  WDJR
 //  网页基类
-//  Created by xueyaoji on 2018/1/22.
-//  Copyright © 2018年 WANDAPUHUI. All rights reserved.
+//  Created by fengzi on 2018/1/22.
+//  Copyright © 2018年 fengzi. All rights reserved.
 //
 
-#import "WDBaseViewController.h"
 #import <WebKit/WebKit.h>
+#import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger, InteractiveType) {
     InteractiveTypeLogin,
@@ -17,7 +17,7 @@ typedef NS_ENUM(NSInteger, InteractiveType) {
 
 typedef void(^InteractiveBlock)(id parameter);
 
-@interface WDBaseWebVC : WDBaseViewController
+@interface WDBaseWebVC : UIViewController
 
 /**
  需要执行的script 语句集合

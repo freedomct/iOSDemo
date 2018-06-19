@@ -68,7 +68,7 @@
 //    [config.userContentController addScriptMessageHandler:self name:@"getInfo"];
 //    _wkWebView = [[WKWebView alloc]initWithFrame:CGRectMake(0, 100, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - 100) configuration:config];
 //    [self.view addSubview:_wkWebView];
-//    NSString *urlStr = @"http://10.53.147.46:8088/#/mgm";
+//    NSString *urlStr = @"https://www.baidu.com";
 ////    NSString *urlStr = [[NSBundle mainBundle]pathForResource:@"demo3.html" ofType:nil];
 //
 ////    NSURL *url = [[NSURL alloc]initFileURLWithPath:urlStr];
@@ -80,8 +80,7 @@
 //    [_wkWebView loadRequest:request];
 //    UIWebView *webview = [[UIWebView alloc]initWithFrame:self.view.frame];
 //    webview.backgroundColor = [UIColor redColor];
-//    NSString *urlStr = @"http://10.53.147.46:8088/#/mgm";
-////    http://10.53.145.194:16020/h5/appview/#/mgm
+//    NSString *urlStr = @"https://www.baidu.com";
 //    NSURL *url = [NSURL URLWithString:urlStr];
 //    NSURLRequest *reques = [NSURLRequest requestWithURL:url];
 //    [webview loadRequest:reques];

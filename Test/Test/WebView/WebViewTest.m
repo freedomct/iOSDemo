@@ -16,12 +16,7 @@
 
 - (void)viewDidLoad {
 
-//    NSString *urlStr = @"http://10.53.145.194:16020/h5/appview/#/mgm";
     self.urlStr = @"https://www.baidu.com/";
-//    NSString *urlStr = @"http://10.53.147.46:8088/#/mgm";
-
-//    self.urlStr = @"http://10.53.145.194:16020/h5/appview/#/mgm";
-//    self.urlStr = @"https://www.baidu.com/";
 
 //    self.scriptMessages = @[@"getInfo",@"login"];
     self.scriptMessages = [NSMutableArray arrayWithObject:@"getInfo"];

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TRN-QY-uy0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TRN-QY-uy0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -120,7 +120,7 @@
         <!--ReactiveCocoaVC-->
         <scene sceneID="cr6-cy-JBk">
             <objects>
-                <viewController restorationIdentifier="ReactiveCocoaVC" storyboardIdentifier="ReactiveCocoaVC" id="AHr-hW-hpI" customClass="WDAlipayAuthResultVC" sceneMemberID="viewController">
+                <viewController restorationIdentifier="ReactiveCocoaVC" storyboardIdentifier="ReactiveCocoaVC" id="AHr-hW-hpI" customClass="ReactiveCocoaVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="u0H-DV-Zci"/>
                         <viewControllerLayoutGuide type="bottom" id="fw6-Ch-ttB"/>

@@ -22,12 +22,8 @@
 		3340D0E62060DDA600498E2A /* TestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3340D0E52060DDA600498E2A /* TestTests.m */; };
 		3340D0F12060DDA600498E2A /* TestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3340D0F02060DDA600498E2A /* TestUITests.m */; };
 		3340D10A2060DDCD00498E2A /* yang.html in Resources */ = {isa = PBXBuildFile; fileRef = 3340D0FE2060DDCB00498E2A /* yang.html */; };
-		3340D10B2060DDCD00498E2A /* WDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3340D1022060DDCC00498E2A /* WDBaseViewController.m */; };
 		3340D10C2060DDCD00498E2A /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = 3340D1042060DDCC00498E2A /* test.html */; };
 		3340D10D2060DDCD00498E2A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3340D1062060DDCC00498E2A /* ViewController.m */; };
-		3340D10E2060DDCD00498E2A /* WDInviteFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3340D1072060DDCC00498E2A /* WDInviteFriendViewController.m */; };
-		3340D10F2060DDCD00498E2A /* WDShareInviteFriendBtnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3340D1082060DDCC00498E2A /* WDShareInviteFriendBtnView.m */; };
-		3340D1102060DDCD00498E2A /* WDShareInviteFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3340D1092060DDCC00498E2A /* WDShareInviteFriendViewController.m */; };
 		3347C89820AD91A8006B3222 /* CustomPickViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3347C89720AD91A8006B3222 /* CustomPickViewVC.m */; };
 		3347C89A20AD9B01006B3222 /* address.json in Resources */ = {isa = PBXBuildFile; fileRef = 3347C89920AD9B01006B3222 /* address.json */; };
 		334E727120B798650051AB5F /* CustomCursorIndexVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 334E727020B798650051AB5F /* CustomCursorIndexVC.m */; };
@@ -49,7 +45,6 @@
 		33C0BDFF2089731A0017A6FE /* TableViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C0BDFE2089731A0017A6FE /* TableViewVC.m */; };
 		33C0BE042089733B0017A6FE /* MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C0BE032089733B0017A6FE /* MyCell.m */; };
 		33DCCF2120A524EB0070CBA6 /* CustomActionSheetVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DCCF2020A524EB0070CBA6 /* CustomActionSheetVC.m */; };
-		33EA7201207E401E00B8716E /* WDAlipayAuthResultVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33EA71FF207E401E00B8716E /* WDAlipayAuthResultVC.m */; };
 		33EA720E207E55E000B8716E /* PicChartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33EA720D207E55E000B8716E /* PicChartVC.m */; };
 		33EA7211207E664100B8716E /* PieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33EA7210207E664100B8716E /* PieChartView.m */; };
 		33F848EA2062507A008EA66F /* demo3.html in Resources */ = {isa = PBXBuildFile; fileRef = 33F848E92062507A008EA66F /* demo3.html */; };
@@ -125,17 +120,9 @@
 		3340D0F02060DDA600498E2A /* TestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestUITests.m; sourceTree = "<group>"; };
 		3340D0F22060DDA600498E2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3340D0FE2060DDCB00498E2A /* yang.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = yang.html; sourceTree = "<group>"; };
-		3340D0FF2060DDCB00498E2A /* WDShareInviteFriendBtnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDShareInviteFriendBtnView.h; sourceTree = "<group>"; };
-		3340D1002060DDCB00498E2A /* WDShareInviteFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDShareInviteFriendViewController.h; sourceTree = "<group>"; };
-		3340D1012060DDCC00498E2A /* WDBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDBaseViewController.h; sourceTree = "<group>"; };
-		3340D1022060DDCC00498E2A /* WDBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDBaseViewController.m; sourceTree = "<group>"; };
-		3340D1032060DDCC00498E2A /* WDInviteFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDInviteFriendViewController.h; sourceTree = "<group>"; };
 		3340D1042060DDCC00498E2A /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
 		3340D1052060DDCC00498E2A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		3340D1062060DDCC00498E2A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		3340D1072060DDCC00498E2A /* WDInviteFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDInviteFriendViewController.m; sourceTree = "<group>"; };
-		3340D1082060DDCC00498E2A /* WDShareInviteFriendBtnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDShareInviteFriendBtnView.m; sourceTree = "<group>"; };
-		3340D1092060DDCC00498E2A /* WDShareInviteFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDShareInviteFriendViewController.m; sourceTree = "<group>"; };
 		3347C89620AD91A8006B3222 /* CustomPickViewVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomPickViewVC.h; sourceTree = "<group>"; };
 		3347C89720AD91A8006B3222 /* CustomPickViewVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomPickViewVC.m; sourceTree = "<group>"; };
 		3347C89920AD9B01006B3222 /* address.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = address.json; sourceTree = "<group>"; };
@@ -177,8 +164,6 @@
 		33C0BE032089733B0017A6FE /* MyCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCell.m; sourceTree = "<group>"; };
 		33DCCF1F20A524EB0070CBA6 /* CustomActionSheetVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomActionSheetVC.h; sourceTree = "<group>"; };
 		33DCCF2020A524EB0070CBA6 /* CustomActionSheetVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomActionSheetVC.m; sourceTree = "<group>"; };
-		33EA71FF207E401E00B8716E /* WDAlipayAuthResultVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDAlipayAuthResultVC.m; sourceTree = "<group>"; };
-		33EA7200207E401E00B8716E /* WDAlipayAuthResultVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDAlipayAuthResultVC.h; sourceTree = "<group>"; };
 		33EA720C207E55E000B8716E /* PicChartVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PicChartVC.h; sourceTree = "<group>"; };
 		33EA720D207E55E000B8716E /* PicChartVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PicChartVC.m; sourceTree = "<group>"; };
 		33EA720F207E664100B8716E /* PieChartView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PieChartView.h; sourceTree = "<group>"; };
@@ -296,14 +281,6 @@
 				33F848EF20625804008EA66F /* WebViewTest.m */,
 				33F849692063F3CD008EA66F /* WDBaseWebVC.h */,
 				33F849682063F3CD008EA66F /* WDBaseWebVC.m */,
-				3340D1012060DDCC00498E2A /* WDBaseViewController.h */,
-				3340D1022060DDCC00498E2A /* WDBaseViewController.m */,
-				3340D1032060DDCC00498E2A /* WDInviteFriendViewController.h */,
-				3340D1072060DDCC00498E2A /* WDInviteFriendViewController.m */,
-				3340D0FF2060DDCB00498E2A /* WDShareInviteFriendBtnView.h */,
-				3340D1082060DDCC00498E2A /* WDShareInviteFriendBtnView.m */,
-				3340D1002060DDCB00498E2A /* WDShareInviteFriendViewController.h */,
-				3340D1092060DDCC00498E2A /* WDShareInviteFriendViewController.m */,
 			);
 			path = WebView;
 			sourceTree = "<group>";
@@ -380,7 +357,6 @@
 				33243C4B208036F600FFF4AA /* Layout */,
 				33243C4A208036CF00FFF4AA /* WebView */,
 				33EA720A207E55C400B8716E /* PieChart */,
-				33EA71FE207E401000B8716E /* Demo */,
 				3358DA87207C6431005C83F6 /* ReactiveCocoa */,
 				3347C89520AD9193006B3222 /* CustomPickView */,
 				33B31F2220A3F41D003EC61F /* Supporting Files */,
@@ -665,15 +641,6 @@
 				33DCCF2020A524EB0070CBA6 /* CustomActionSheetVC.m */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		33EA71FE207E401000B8716E /* Demo */ = {
-			isa = PBXGroup;
-			children = (
-				33EA7200207E401E00B8716E /* WDAlipayAuthResultVC.h */,
-				33EA71FF207E401E00B8716E /* WDAlipayAuthResultVC.m */,
-			);
-			path = Demo;
 			sourceTree = "<group>";
 		};
 		33EA720A207E55C400B8716E /* PieChart */ = {
@@ -987,9 +954,7 @@
 				33C0BDFF2089731A0017A6FE /* TableViewVC.m in Sources */,
 				337B356920842E83006356BC /* CommentsVC.m in Sources */,
 				3322E09E2091673E009D32B0 /* ThreadVC.m in Sources */,
-				3340D10B2060DDCD00498E2A /* WDBaseViewController.m in Sources */,
 				337B357A2084306E006356BC /* SystemPhotoVC.m in Sources */,
-				3340D10F2060DDCD00498E2A /* WDShareInviteFriendBtnView.m in Sources */,
 				3340D0DC2060DDA600498E2A /* main.m in Sources */,
 				337B357120842E91006356BC /* Header.m in Sources */,
 				33F848F020625804008EA66F /* WebViewTest.m in Sources */,
@@ -998,11 +963,9 @@
 				337B357020842E91006356BC /* Footer.m in Sources */,
 				33243C5320806D7600FFF4AA /* MyAlertVC.m in Sources */,
 				33A4F81A20860BC6002DECFF /* FirstVC.m in Sources */,
-				33EA7201207E401E00B8716E /* WDAlipayAuthResultVC.m in Sources */,
 				33243C4F208067DD00FFF4AA /* LCPublicAlertView.m in Sources */,
 				337B356320842DEE006356BC /* MasonryVC.m in Sources */,
 				33F8496A2063F3CD008EA66F /* WDBaseWebVC.m in Sources */,
-				3340D1102060DDCD00498E2A /* WDShareInviteFriendViewController.m in Sources */,
 				334E727120B798650051AB5F /* CustomCursorIndexVC.m in Sources */,
 				33C0BE042089733B0017A6FE /* MyCell.m in Sources */,
 				337B355F20842979006356BC /* DeviceOpenTime.m in Sources */,
@@ -1011,7 +974,6 @@
 				337B357620842ECE006356BC /* IBAUploadFileManager.m in Sources */,
 				3347C89820AD91A8006B3222 /* CustomPickViewVC.m in Sources */,
 				33A4F82020860BD8002DECFF /* ThirdVC.m in Sources */,
-				3340D10E2060DDCD00498E2A /* WDInviteFriendViewController.m in Sources */,
 				3340D10D2060DDCD00498E2A /* ViewController.m in Sources */,
 				337B357220842E91006356BC /* CommentImageCell.m in Sources */,
 				3358DA8D207C6451005C83F6 /* ReactiveCocoaVC.m in Sources */,

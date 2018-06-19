@@ -18,7 +18,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     NSMutableString *testuserAgent = [NSMutableString stringWithString:[[UIWebView new] stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"]];
-    NSString *newUagent = [NSString stringWithFormat:@"%@ %@", testuserAgent, @"wdph/2.1.1"];
+    NSString *newUagent = [NSString stringWithFormat:@"%@ %@", testuserAgent, @"test"];
     NSDictionary *testDictionnary = [[NSDictionary alloc] initWithObjectsAndKeys:newUagent, @"UserAgent", nil];
     [[NSUserDefaults standardUserDefaults] registerDefaults:testDictionnary];
 

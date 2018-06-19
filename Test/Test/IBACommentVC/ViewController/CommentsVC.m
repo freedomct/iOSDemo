@@ -420,21 +420,11 @@
 - (void)uploadSelectedImage:(id)uploadImage
 {
     
-//    {
-//        "reqBody": {
-//            "bossProdId": 123456789,    // 洋老板商品id
-//            "content": "这是一条好评",    // 评论内容
-//            "subsId": "1023123",    // 订单id
-//            "images": "/img/img1.png，/img/img2.png",    // 图片路径，逗号分割
-//            "score": 5  // 评论分数（1~5星）
-//        }
-//    }
-    
 //    [self commitUserOrderComment];
   
     UIImage *image = uploadImage;
     //    image = [image scaleToSize:CGSizeMake(imageWidth, imageHeight)];
-    NSString *uploadImageStr = [NSString stringWithFormat:@"%@/js/ueditor/jsp/uploader.jsp?action=uploadsys&dirName=comment",@"https://mobile.ibalife.com"];
+    NSString *uploadImageStr = [NSString stringWithFormat:@"%@uploadurl",@"domain"];
     
     IBAUploadFileManager *uploadManager = [IBAUploadFileManager uploadManager];
     [uploadManager uploadFile:image Path:uploadImageStr mimeType:@"image/jpeg" name:@"upload" Name:@"oneTrialReport.jpg" parameter:nil successBlock:^(id sender) {
@@ -449,28 +439,6 @@
     
 }
 
-- (void)commitUserOrderComment {
-    
-
-    NSArray *tempArr = @[@"123",@"211",@"1235",@"2546"];
-    NSString *tempStr = [tempArr componentsJoinedByString:@","];
-    
-    NSDictionary *body = @{
-                           @"bossProdId":@563,
-                           @"content":@"这是一条好评",
-                           @"subsId":@"1023123",
-                           @"images":tempStr,
-                           @"score":@5
-                           };
-    NSDictionary *parameter = @{@"reqBody":body};
-    
-    NSLog(@"parameter = %@",parameter);
-    
-    
-    NSLog(@"tempStr = %@",tempStr);
-    
-    
-}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
