@@ -44,6 +44,7 @@
 		33AA429D208B3907001AC3BC /* SearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33AA429C208B3907001AC3BC /* SearchController.m */; };
 		33C0BDFF2089731A0017A6FE /* TableViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C0BDFE2089731A0017A6FE /* TableViewVC.m */; };
 		33C0BE042089733B0017A6FE /* MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C0BE032089733B0017A6FE /* MyCell.m */; };
+		33D8A57E20E0FBCF0018DFBA /* SystemPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D8A57D20E0FBCF0018DFBA /* SystemPhotos.m */; };
 		33DCCF2120A524EB0070CBA6 /* CustomActionSheetVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DCCF2020A524EB0070CBA6 /* CustomActionSheetVC.m */; };
 		33EA720E207E55E000B8716E /* PicChartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33EA720D207E55E000B8716E /* PicChartVC.m */; };
 		33EA7211207E664100B8716E /* PieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33EA7210207E664100B8716E /* PieChartView.m */; };
@@ -162,6 +163,8 @@
 		33C0BDFE2089731A0017A6FE /* TableViewVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewVC.m; sourceTree = "<group>"; };
 		33C0BE022089733B0017A6FE /* MyCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCell.h; sourceTree = "<group>"; };
 		33C0BE032089733B0017A6FE /* MyCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCell.m; sourceTree = "<group>"; };
+		33D8A57C20E0FBCF0018DFBA /* SystemPhotos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemPhotos.h; sourceTree = "<group>"; };
+		33D8A57D20E0FBCF0018DFBA /* SystemPhotos.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemPhotos.m; sourceTree = "<group>"; };
 		33DCCF1F20A524EB0070CBA6 /* CustomActionSheetVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomActionSheetVC.h; sourceTree = "<group>"; };
 		33DCCF2020A524EB0070CBA6 /* CustomActionSheetVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomActionSheetVC.m; sourceTree = "<group>"; };
 		33EA720C207E55E000B8716E /* PicChartVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PicChartVC.h; sourceTree = "<group>"; };
@@ -337,9 +340,9 @@
 		3340D0CB2060DDA500498E2A /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				3358DA81207C5C54005C83F6 /* Main */,
 				3380764520BDA6C20034C5B6 /* AVCaptureSession */,
 				334E726D20B798330051AB5F /* CustomCursorIndex */,
-				3358DA81207C5C54005C83F6 /* Main */,
 				33DCCF1D20A524B60070CBA6 /* CustomActionSheet */,
 				3322E09B20916723009D32B0 /* Thread */,
 				33210930208ECF760049F9FA /* ViewContent */,
@@ -359,6 +362,7 @@
 				33EA720A207E55C400B8716E /* PieChart */,
 				3358DA87207C6431005C83F6 /* ReactiveCocoa */,
 				3347C89520AD9193006B3222 /* CustomPickView */,
+				3361290120E0FB9200DF6323 /* SystemPhotos */,
 				33B31F2220A3F41D003EC61F /* Supporting Files */,
 			);
 			path = Test;
@@ -411,8 +415,8 @@
 		3358DA81207C5C54005C83F6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				3358DA83207C5C6F005C83F6 /* View */,
 				3358DA82207C5C63005C83F6 /* ViewController */,
+				3358DA83207C5C6F005C83F6 /* View */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -466,6 +470,14 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3361290120E0FB9200DF6323 /* SystemPhotos */ = {
+			isa = PBXGroup;
+			children = (
+				33D8A57B20E0FBBB0018DFBA /* ViewController */,
+			);
+			path = SystemPhotos;
 			sourceTree = "<group>";
 		};
 		337B355C20842961006356BC /* DeviceOpenTime */ = {
@@ -622,6 +634,15 @@
 			children = (
 				337B35782084306E006356BC /* SystemPhotoVC.h */,
 				337B35792084306E006356BC /* SystemPhotoVC.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		33D8A57B20E0FBBB0018DFBA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				33D8A57C20E0FBCF0018DFBA /* SystemPhotos.h */,
+				33D8A57D20E0FBCF0018DFBA /* SystemPhotos.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -973,6 +994,7 @@
 				33AA429D208B3907001AC3BC /* SearchController.m in Sources */,
 				337B357620842ECE006356BC /* IBAUploadFileManager.m in Sources */,
 				3347C89820AD91A8006B3222 /* CustomPickViewVC.m in Sources */,
+				33D8A57E20E0FBCF0018DFBA /* SystemPhotos.m in Sources */,
 				33A4F82020860BD8002DECFF /* ThirdVC.m in Sources */,
 				3340D10D2060DDCD00498E2A /* ViewController.m in Sources */,
 				337B357220842E91006356BC /* CommentImageCell.m in Sources */,

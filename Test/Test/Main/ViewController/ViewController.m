@@ -21,6 +21,8 @@
 #import "JudgeStringNumVC.h"
 #import "SearchController.h"
 #import "AVCaptureSessionVC.h"
+#import "SystemPhotos.h"
+
 @interface ViewController ()<WKUIDelegate,WKNavigationDelegate,WKScriptMessageHandler,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 //@property (nonatomic, strong) UIWebView *webView;
@@ -59,7 +61,7 @@
 //               @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10"]
 //               ];
     
-    _datas = @[@"1、WKWebView",@"2、TableView",@"3、ReactiveCocoa",@"4、自定义饼图",@"5、",@"6、获取开机时间",@"7、跳转到指定的VC",@"8、UITableView",@"9、判断字符串是否有小数",@"10、弹出搜索",@"11、图片列表",@"12、多线程",@"13、lottie",@"14、CustomActionSheet",@"15、CustomPickView",@"16、输入框控制光标",@"17、调用系统 摄像头扫描二维码"];
+    _datas = @[@"1、WKWebView",@"2、TableView",@"3、ReactiveCocoa",@"4、自定义饼图",@"5、",@"6、获取开机时间",@"7、跳转到指定的VC",@"8、UITableView",@"9、判断字符串是否有小数",@"10、弹出搜索",@"11、图片列表",@"12、多线程",@"13、lottie",@"14、CustomActionSheet",@"15、CustomPickView",@"16、输入框控制光标",@"17、调用系统 摄像头扫描二维码",@"18、获取系统相册图片"];
     
 //    [self.collectionView registerClass:[Header class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
     
@@ -255,6 +257,12 @@
             
             AVCaptureSessionVC *captureSession = [[AVCaptureSessionVC alloc]init];
             [self.navigationController pushViewController:captureSession animated:YES];
+        }
+            break;
+        case 17:  //  获取系统相册 及图片
+        {
+            SystemPhotos *photos = [[SystemPhotos alloc]init];
+            [self.navigationController pushViewController:photos animated:YES];
         }
             break;
             
