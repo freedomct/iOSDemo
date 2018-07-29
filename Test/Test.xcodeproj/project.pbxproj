@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		330E0D7D210D665200781BAA /* MansoryDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 330E0D7C210D665200781BAA /* MansoryDemo.m */; };
 		330FD3872077B02700CCE776 /* MyLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 330FD3862077B02700CCE776 /* MyLayout.m */; };
 		331B2CA4208ADF670020CE97 /* JudgeStringNumVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 331B2CA3208ADF670020CE97 /* JudgeStringNumVC.m */; };
 		33210933208ECF880049F9FA /* ViewContentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33210932208ECF880049F9FA /* ViewContentVC.m */; };
@@ -92,6 +93,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		330E0D7B210D665200781BAA /* MansoryDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MansoryDemo.h; sourceTree = "<group>"; };
+		330E0D7C210D665200781BAA /* MansoryDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MansoryDemo.m; sourceTree = "<group>"; };
 		330FD3852077B02700CCE776 /* MyLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyLayout.h; sourceTree = "<group>"; };
 		330FD3862077B02700CCE776 /* MyLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyLayout.m; sourceTree = "<group>"; };
 		331B2CA2208ADF670020CE97 /* JudgeStringNumVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JudgeStringNumVC.h; sourceTree = "<group>"; };
@@ -230,6 +233,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		330E0D7A210D663700781BAA /* MasonryDemo */ = {
+			isa = PBXGroup;
+			children = (
+				330E0D7B210D665200781BAA /* MansoryDemo.h */,
+				330E0D7C210D665200781BAA /* MansoryDemo.m */,
+			);
+			path = MasonryDemo;
+			sourceTree = "<group>";
+		};
 		331B2CA1208ADF4D0020CE97 /* JudegStringNum */ = {
 			isa = PBXGroup;
 			children = (
@@ -340,6 +352,7 @@
 		3340D0CB2060DDA500498E2A /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				330E0D7A210D663700781BAA /* MasonryDemo */,
 				3358DA81207C5C54005C83F6 /* Main */,
 				3380764520BDA6C20034C5B6 /* AVCaptureSession */,
 				334E726D20B798330051AB5F /* CustomCursorIndex */,
@@ -974,6 +987,7 @@
 			files = (
 				33C0BDFF2089731A0017A6FE /* TableViewVC.m in Sources */,
 				337B356920842E83006356BC /* CommentsVC.m in Sources */,
+				330E0D7D210D665200781BAA /* MansoryDemo.m in Sources */,
 				3322E09E2091673E009D32B0 /* ThreadVC.m in Sources */,
 				337B357A2084306E006356BC /* SystemPhotoVC.m in Sources */,
 				3340D0DC2060DDA600498E2A /* main.m in Sources */,

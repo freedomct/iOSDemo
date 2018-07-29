@@ -241,19 +241,11 @@
                         <constraints>
                             <constraint firstItem="1wa-Yp-uN4" firstAttribute="top" secondItem="HAN-fy-9Dp" secondAttribute="bottom" constant="50" id="8Nr-Hj-mTd"/>
                             <constraint firstItem="1wa-Yp-uN4" firstAttribute="leading" secondItem="n5W-dB-FpR" secondAttribute="leading" constant="20" id="9Bs-47-yEM"/>
-                            <constraint firstItem="KdE-Ut-7yy" firstAttribute="centerX" secondItem="n5W-dB-FpR" secondAttribute="centerX" id="Ff0-08-LIZ"/>
-                            <constraint firstItem="1wa-Yp-uN4" firstAttribute="centerY" secondItem="n5W-dB-FpR" secondAttribute="centerY" id="IO1-gy-yst"/>
                             <constraint firstItem="KdE-Ut-7yy" firstAttribute="top" secondItem="1wa-Yp-uN4" secondAttribute="bottom" constant="10" id="NZk-41-lTL"/>
                             <constraint firstItem="KdE-Ut-7yy" firstAttribute="leading" secondItem="n5W-dB-FpR" secondAttribute="leading" constant="20" id="eFa-WA-k5u"/>
                             <constraint firstAttribute="trailing" secondItem="KdE-Ut-7yy" secondAttribute="trailing" constant="20" id="kaC-Fd-Epj"/>
-                            <constraint firstItem="1wa-Yp-uN4" firstAttribute="centerX" secondItem="n5W-dB-FpR" secondAttribute="centerX" id="qZz-HQ-iEg"/>
                             <constraint firstAttribute="trailing" secondItem="1wa-Yp-uN4" secondAttribute="trailing" constant="20" id="zZF-Dk-CTk"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="IO1-gy-yst"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="修改光标位置" id="qOp-9M-4RT"/>
                     <connections>
@@ -371,7 +363,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="qIu-Vu-b2W" firstAttribute="leading" secondItem="hR0-ZW-bb3" secondAttribute="leading" constant="20" id="1Gs-kv-LiM"/>
-                            <constraint firstItem="qIu-Vu-b2W" firstAttribute="centerX" secondItem="hR0-ZW-bb3" secondAttribute="centerX" id="isx-EI-jA1"/>
                             <constraint firstItem="qIu-Vu-b2W" firstAttribute="centerY" secondItem="hR0-ZW-bb3" secondAttribute="centerY" id="t2g-mY-7JQ"/>
                             <constraint firstAttribute="trailing" secondItem="qIu-Vu-b2W" secondAttribute="trailing" constant="20" id="vHf-D2-pM4"/>
                         </constraints>

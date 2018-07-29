@@ -26,12 +26,12 @@ PODS:
   - ReactiveCocoa/no-arc (2.5)
   - ReactiveCocoa/UI (2.5):
     - ReactiveCocoa/Core
-  - SDWebImage (4.4.1):
-    - SDWebImage/Core (= 4.4.1)
-  - SDWebImage/Core (4.4.1)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
   - SGQRCode (2.2.0)
   - YYCache (1.0.4)
-  - ZLPhotoBrowser (2.7.0):
+  - ZLPhotoBrowser (2.7.3):
     - GPUImage
     - SDWebImage
 
@@ -68,11 +68,11 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
-  SDWebImage: 47e9b5b925cbce75946c23f0c42dd19464189af4
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SGQRCode: 6cd7f03ea6b74d1267820d427b07d1451b387c79
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
-  ZLPhotoBrowser: d3858f235a57b4d5c6e51f27af5f352d223d926b
+  ZLPhotoBrowser: 8a2c8402ac36c398f7729876fb9e5171f8efceff
 
-PODFILE CHECKSUM: 2dde6f6a82667b0f7f8a1b4449bc2977b2c611bf
+PODFILE CHECKSUM: 56b201172fdbcdda5de49f321ec2661105c38855
 
 COCOAPODS: 1.5.3

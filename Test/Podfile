@@ -1,6 +1,7 @@
 
 platform :ios,'8.0'
 #use_frameworks!
+inhibit_all_warnings!
 use_frameworks!
 target 'Test' do
    pod 'Masonry'
@@ -14,5 +15,7 @@ target 'Test' do
    pod 'ZLPhotoBrowser'
    pod 'lottie-ios', '~> 2.5.0'
    pod 'YYCache'
+   pod 'ReactiveCocoa','~>2.5'
+
 
 end
