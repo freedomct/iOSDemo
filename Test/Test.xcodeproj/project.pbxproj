@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		330E0D7D210D665200781BAA /* MansoryDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 330E0D7C210D665200781BAA /* MansoryDemo.m */; };
 		330FD3872077B02700CCE776 /* MyLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 330FD3862077B02700CCE776 /* MyLayout.m */; };
 		331B2CA4208ADF670020CE97 /* JudgeStringNumVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 331B2CA3208ADF670020CE97 /* JudgeStringNumVC.m */; };
 		33210933208ECF880049F9FA /* ViewContentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33210932208ECF880049F9FA /* ViewContentVC.m */; };
@@ -30,6 +29,8 @@
 		334E727120B798650051AB5F /* CustomCursorIndexVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 334E727020B798650051AB5F /* CustomCursorIndexVC.m */; };
 		3358DA86207C5C80005C83F6 /* MainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3358DA85207C5C80005C83F6 /* MainCell.m */; };
 		3358DA8D207C6451005C83F6 /* ReactiveCocoaVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3358DA8C207C6451005C83F6 /* ReactiveCocoaVC.m */; };
+		3372E5A5210DB5EA00341520 /* CustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3372E5A4210DB5EA00341520 /* CustomTextField.m */; };
+		3372E5A8210DC8E900341520 /* TestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3372E5A7210DC8E900341520 /* TestVC.m */; };
 		337B355F20842979006356BC /* DeviceOpenTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 337B355E20842979006356BC /* DeviceOpenTime.m */; };
 		337B356320842DEE006356BC /* MasonryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 337B356220842DEE006356BC /* MasonryVC.m */; };
 		337B356920842E83006356BC /* CommentsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 337B356820842E83006356BC /* CommentsVC.m */; };
@@ -93,8 +94,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		330E0D7B210D665200781BAA /* MansoryDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MansoryDemo.h; sourceTree = "<group>"; };
-		330E0D7C210D665200781BAA /* MansoryDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MansoryDemo.m; sourceTree = "<group>"; };
 		330FD3852077B02700CCE776 /* MyLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyLayout.h; sourceTree = "<group>"; };
 		330FD3862077B02700CCE776 /* MyLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyLayout.m; sourceTree = "<group>"; };
 		331B2CA2208ADF670020CE97 /* JudgeStringNumVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JudgeStringNumVC.h; sourceTree = "<group>"; };
@@ -136,6 +135,10 @@
 		3358DA85207C5C80005C83F6 /* MainCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainCell.m; sourceTree = "<group>"; };
 		3358DA8B207C6451005C83F6 /* ReactiveCocoaVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactiveCocoaVC.h; sourceTree = "<group>"; };
 		3358DA8C207C6451005C83F6 /* ReactiveCocoaVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactiveCocoaVC.m; sourceTree = "<group>"; };
+		3372E5A3210DB5EA00341520 /* CustomTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomTextField.h; sourceTree = "<group>"; };
+		3372E5A4210DB5EA00341520 /* CustomTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTextField.m; sourceTree = "<group>"; };
+		3372E5A6210DC8E900341520 /* TestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestVC.h; sourceTree = "<group>"; };
+		3372E5A7210DC8E900341520 /* TestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestVC.m; sourceTree = "<group>"; };
 		337B355D20842979006356BC /* DeviceOpenTime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceOpenTime.h; sourceTree = "<group>"; };
 		337B355E20842979006356BC /* DeviceOpenTime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceOpenTime.m; sourceTree = "<group>"; };
 		337B356120842DEE006356BC /* MasonryVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasonryVC.h; sourceTree = "<group>"; };
@@ -233,15 +236,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		330E0D7A210D663700781BAA /* MasonryDemo */ = {
-			isa = PBXGroup;
-			children = (
-				330E0D7B210D665200781BAA /* MansoryDemo.h */,
-				330E0D7C210D665200781BAA /* MansoryDemo.m */,
-			);
-			path = MasonryDemo;
-			sourceTree = "<group>";
-		};
 		331B2CA1208ADF4D0020CE97 /* JudegStringNum */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,7 +346,7 @@
 		3340D0CB2060DDA500498E2A /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				330E0D7A210D663700781BAA /* MasonryDemo */,
+				3372E5A2210DB5D300341520 /* CustomTextField */,
 				3358DA81207C5C54005C83F6 /* Main */,
 				3380764520BDA6C20034C5B6 /* AVCaptureSession */,
 				334E726D20B798330051AB5F /* CustomCursorIndex */,
@@ -377,6 +371,8 @@
 				3347C89520AD9193006B3222 /* CustomPickView */,
 				3361290120E0FB9200DF6323 /* SystemPhotos */,
 				33B31F2220A3F41D003EC61F /* Supporting Files */,
+				3372E5A6210DC8E900341520 /* TestVC.h */,
+				3372E5A7210DC8E900341520 /* TestVC.m */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -491,6 +487,15 @@
 				33D8A57B20E0FBBB0018DFBA /* ViewController */,
 			);
 			path = SystemPhotos;
+			sourceTree = "<group>";
+		};
+		3372E5A2210DB5D300341520 /* CustomTextField */ = {
+			isa = PBXGroup;
+			children = (
+				3372E5A3210DB5EA00341520 /* CustomTextField.h */,
+				3372E5A4210DB5EA00341520 /* CustomTextField.m */,
+			);
+			path = CustomTextField;
 			sourceTree = "<group>";
 		};
 		337B355C20842961006356BC /* DeviceOpenTime */ = {
@@ -987,7 +992,6 @@
 			files = (
 				33C0BDFF2089731A0017A6FE /* TableViewVC.m in Sources */,
 				337B356920842E83006356BC /* CommentsVC.m in Sources */,
-				330E0D7D210D665200781BAA /* MansoryDemo.m in Sources */,
 				3322E09E2091673E009D32B0 /* ThreadVC.m in Sources */,
 				337B357A2084306E006356BC /* SystemPhotoVC.m in Sources */,
 				3340D0DC2060DDA600498E2A /* main.m in Sources */,
@@ -996,12 +1000,14 @@
 				3380764820BDA6E00034C5B6 /* AVCaptureSessionVC.m in Sources */,
 				3358DA86207C5C80005C83F6 /* MainCell.m in Sources */,
 				337B357020842E91006356BC /* Footer.m in Sources */,
+				3372E5A8210DC8E900341520 /* TestVC.m in Sources */,
 				33243C5320806D7600FFF4AA /* MyAlertVC.m in Sources */,
 				33A4F81A20860BC6002DECFF /* FirstVC.m in Sources */,
 				33243C4F208067DD00FFF4AA /* LCPublicAlertView.m in Sources */,
 				337B356320842DEE006356BC /* MasonryVC.m in Sources */,
 				33F8496A2063F3CD008EA66F /* WDBaseWebVC.m in Sources */,
 				334E727120B798650051AB5F /* CustomCursorIndexVC.m in Sources */,
+				3372E5A5210DB5EA00341520 /* CustomTextField.m in Sources */,
 				33C0BE042089733B0017A6FE /* MyCell.m in Sources */,
 				337B355F20842979006356BC /* DeviceOpenTime.m in Sources */,
 				33A4F81D20860BD0002DECFF /* SecondVC.m in Sources */,

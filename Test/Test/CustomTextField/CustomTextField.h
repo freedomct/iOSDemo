@@ -1,5 +1,5 @@
 //
-//  MansoryDemo.h
+//  CustomTextField.h
 //  Test
 //
 //  Created by fengzi on 2018/7/29.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MansoryDemo : UIViewController
+@interface CustomTextField : UIView
 
 @end

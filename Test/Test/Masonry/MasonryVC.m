@@ -36,6 +36,21 @@
 
 @property (nonatomic, strong) UITextView *commentTextView;
 
+
+// ================= 更新约束 ==================
+
+@property (nonatomic, strong) UIView *baseView;
+
+@property (nonatomic, strong) UIView *lineView;
+
+@property (nonatomic, strong) UIView *centerView;
+
+@property (nonatomic, strong) UIView *leftView;
+
+@property (nonatomic, strong) UIView *rightView;
+
+@property (nonatomic, assign) NSInteger type;
+
 @end
 
 @implementation MasonryVC
@@ -44,26 +59,28 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UILabel *label = [[UILabel alloc]init];
-    [self.view addSubview:label];
-    [label mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(20);
-
-    }];
     
-    UIView *redView = [[UIView alloc]init];
-    redView.backgroundColor = [UIColor redColor];
-    [self.view addSubview:redView];
-    
-    
-    [redView mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.left.mas_equalTo(self.view.safeAreaInsets.left);
-//        make.bottom.mas_equalTo(self.view.mas_safeAreaLayoutGuideBottom);
-        make.right.mas_equalTo(self.view.safeAreaInsets.right);
-        
-        make.height.mas_equalTo(100);
-    }];
+    [self updateConstraintTest];
+//    UILabel *label = [[UILabel alloc]init];
+//    [self.view addSubview:label];
+//    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.mas_equalTo(20);
+//
+//    }];
+//
+//    UIView *redView = [[UIView alloc]init];
+//    redView.backgroundColor = [UIColor redColor];
+//    [self.view addSubview:redView];
+//
+//
+//    [redView mas_makeConstraints:^(MASConstraintMaker *make) {
+//
+//        make.left.mas_equalTo(self.view.safeAreaInsets.left);
+////        make.bottom.mas_equalTo(self.view.mas_safeAreaLayoutGuideBottom);
+//        make.right.mas_equalTo(self.view.safeAreaInsets.right);
+//
+//        make.height.mas_equalTo(100);
+//    }];
     
     NSLog(@"%f",self.view.safeAreaInsets.bottom);
     return;
@@ -181,6 +198,85 @@
     }];
     
 }
+
+- (void)updateConstraintTest {
+    _baseView = [[UIView alloc]init];
+    _baseView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:_baseView];
+    
+    [_baseView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(250);
+        make.left.and.right.mas_equalTo(0);
+        make.height.mas_equalTo(100);
+    }];
+    
+    _centerView = [[UIView alloc]init];
+    _centerView.backgroundColor = [UIColor blackColor];
+    [_baseView addSubview:_centerView];
+    
+    [_centerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.mas_equalTo(self.baseView.center);
+        make.height.mas_equalTo(50);
+        make.width.mas_equalTo(self.baseView.mas_width).multipliedBy(0.33);
+    }];
+    
+    _leftView = [[UIView alloc]init];
+    _leftView.backgroundColor = [UIColor greenColor];
+    [_baseView addSubview:_leftView];
+    
+    [_leftView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(50);
+        make.left.mas_equalTo(0);
+        make.right.mas_equalTo(self.centerView.mas_left).offset(0);
+        make.centerY.mas_equalTo(self.baseView.mas_centerY);
+
+    }];
+    
+    _rightView = [[UIView alloc]init];
+    _rightView.backgroundColor = [UIColor yellowColor];
+    [_baseView addSubview:_rightView];
+    
+    [_rightView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(50);
+        make.right.mas_equalTo(0);
+        make.left.mas_equalTo(self.centerView.mas_right).offset(0);
+        make.centerY.mas_equalTo(self.baseView.mas_centerY);
+
+    }];
+    
+    _lineView = [[UIView alloc]init];
+    _lineView.backgroundColor = [UIColor whiteColor];
+    [_baseView addSubview:_lineView];
+    
+    [_lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(-5);
+        make.height.mas_equalTo(5);
+        make.width.mas_equalTo(self.baseView.mas_width).multipliedBy(0.33);
+        make.centerX.mas_equalTo(self.leftView.mas_centerX);
+    }];
+}
+
+- (IBAction)updateConstrast:(id)sender {
+    
+    _type ++;
+    CGFloat width = CGRectGetWidth(self.view.frame)/3;
+    [_lineView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        
+        make.bottom.mas_equalTo(-5);
+        make.height.mas_equalTo(5);
+        make.width.mas_equalTo(self.baseView.mas_width).multipliedBy(0.33);
+
+        if (self.type % 2 == 0) {
+            make.centerX.mas_equalTo(self.baseView.mas_centerX).offset(-width);
+        }else if (self.type % 3 == 0){
+            make.centerX.mas_equalTo(self.baseView.mas_centerX).offset(0);
+        }else{
+            make.centerX.mas_equalTo(self.baseView.mas_centerX).offset(width);
+        }
+    }];
+}
+
+
 - (void)exp4 {
     
     //  声明区域 displayView 是显示区域 keyboardView 是键盘区域
