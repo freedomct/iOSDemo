@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-typedef void(^DelSelectedImageBlock)();
+typedef void(^DelSelectedImageBlock)(void);
 @interface CommentImageCell : UICollectionViewCell
 
 @property (nonatomic, strong) UIImageView *commentImage;

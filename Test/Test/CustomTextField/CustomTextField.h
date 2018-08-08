@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+typedef void(^TextChange) (id result);
 
 @interface CustomTextField : UIView
+
+@property (nonatomic, strong) UITextField *textField;
+
+@property (nonatomic, copy) TextChange changeHandler;
 
 @end

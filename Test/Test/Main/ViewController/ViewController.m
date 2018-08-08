@@ -270,6 +270,11 @@
             [self performSegueWithIdentifier:@"showMansoyDemo" sender:self];
         }
             break;
+        case 19:  //  设置TextField
+        {
+            
+        }
+            break;
             
         default:
             break;

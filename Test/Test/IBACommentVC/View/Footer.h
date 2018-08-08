@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-typedef void(^SubmitBlock)();
+typedef void(^SubmitBlock)(void);
 @interface Footer : UICollectionReusableView
 
 
