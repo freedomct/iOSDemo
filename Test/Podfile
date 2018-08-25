@@ -1,21 +1,32 @@
-
 platform :ios,'8.0'
 #use_frameworks!
 inhibit_all_warnings!
 use_frameworks!
 target 'Test' do
+    
    pod 'Masonry'
+   
    pod 'MBProgressHUD'
+   
    pod 'SGQRCode'
+   
    pod 'ComponentKit'
 #   pod 'Charts'
 
    pod 'ReactiveCocoa', '~> 2.5'
+   
    pod 'AFNetworking'
+   
    pod 'ZLPhotoBrowser'
+   
    pod 'lottie-ios', '~> 2.5.0'
+   
    pod 'YYCache'
+   
    pod 'ReactiveCocoa','~>2.5'
+   
+   # 使用 4.1.0 以下  版本 否则拿不到反编码的cityCode 4.1.0 以上版本cityCode 已取消
+   pod 'BaiduMapKit', '~> 4.0.0'
 
 
 end

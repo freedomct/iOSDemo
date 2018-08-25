@@ -10,13 +10,10 @@
 #endif
 #endif
 
-#import "UIImage+SGImageSize.h"
 #import "SGQRCode.h"
-#import "SGQRCodeAlbumManager.h"
-#import "SGQRCodeGenerateManager.h"
-#import "SGQRCodeHelperTool.h"
-#import "SGQRCodeScanManager.h"
-#import "SGQRCodeScanningView.h"
+#import "SGQRCodeObtain.h"
+#import "SGQRCodeObtainConfigure.h"
+#import "SGQRCodeScanView.h"
 
 FOUNDATION_EXPORT double SGQRCodeVersionNumber;
 FOUNDATION_EXPORT const unsigned char SGQRCodeVersionString[];

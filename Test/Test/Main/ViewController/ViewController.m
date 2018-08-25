@@ -9,7 +9,6 @@
 #import "ViewController.h"
 #import <JavaScriptCore/JavaScriptCore.h>
 #import <WebKit/WebKit.h>
-#import "Header.h"
 #import <Masonry/Masonry.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 
@@ -17,13 +16,17 @@
 #import "MainCell.h"
 
 #import "FirstVC.h"
-#import "TableViewVC.h"
 #import "JudgeStringNumVC.h"
 #import "SearchController.h"
 #import "AVCaptureSessionVC.h"
-#import "SystemPhotos.h"
+//  地图基础组件
+#import <BaiduMapAPI_Map/BMKMapComponent.h>
+//  定位功能
+#import <BaiduMapAPI_Location/BMKLocationComponent.h>
+//  搜索功能
+#import <BaiduMapAPI_Search/BMKSearchComponent.h>
 
-@interface ViewController ()<WKUIDelegate,WKNavigationDelegate,WKScriptMessageHandler,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface ViewController ()<WKUIDelegate,WKNavigationDelegate,WKScriptMessageHandler,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,BMKLocationServiceDelegate,BMKPoiSearchDelegate,BMKGeoCodeSearchDelegate,BMKMapViewDelegate>
 
 //@property (nonatomic, strong) UIWebView *webView;
 //@property (nonatomic, strong) JSContext *context;
@@ -40,6 +43,17 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
+//  地图
+
+@property (nonatomic, strong) BMKMapView *mapView;
+
+//  定位
+@property (nonatomic, strong) BMKLocationService *location;
+
+//  poi 检索
+@property (nonatomic, strong) BMKPoiSearch *search;
+
+@property (nonatomic, strong) BMKGeoCodeSearch *geoCodeSearch;
 
 
 @end
@@ -53,7 +67,45 @@
     NSLog(@"%ld",(long)(section = 12));
     NSLog(@"%ld",(long)(section == 12));
 
-
+    self.view.backgroundColor = [UIColor whiteColor];
+    _mapView = [[BMKMapView alloc]initWithFrame:self.view.bounds];
+    //  设置地图样式 一共有三种 None  Standard Satellite
+    _mapView.mapType = BMKMapTypeStandard;
+    //  打开实时路况
+    //    [_mapView setTrafficEnabled:YES];
+    //  百度热力数据
+    //    [_mapView setBaiduHeatMapEnabled:YES];
+    _mapView.zoomLevel = 15;
+    _mapView.buildingsEnabled = YES;
+    
+    [self.view addSubview:_mapView];
+    
+    
+    
+    //  室内地图
+    _mapView.baseIndoorMapEnabled = YES;
+    //  设置logo 图标 不可隐藏
+    _mapView.logoPosition = BMKLogoPositionCenterBottom;
+    
+    
+    
+    _location = [[BMKLocationService alloc]init];
+    _location.delegate = self;
+    [_location startUserLocationService];
+    //  定位功能
+    [_mapView setShowsUserLocation:YES];
+    _mapView.userTrackingMode = BMKUserTrackingModeFollow;
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self locationFromAddress:@""];
+        
+    });
+    
+    //  POI 搜索功能
+    //    BMKPoiSearch *search = [[BMKPoiSearch alloc]init];
+    //    search.delegate = self;
+    
+ 
 
     
 //    _datas = @[
@@ -134,6 +186,27 @@
 //    }
 //    return nil;
 //}
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [_mapView viewWillAppear];
+    _mapView.delegate = self;
+    [self setNeedsStatusBarAppearanceUpdate];
+    
+}
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    UIImage *image = [UIImage imageNamed:@"navigation"];
+    [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    
+}
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [_mapView viewWillDisappear];
+    _mapView.delegate = nil;
+    
+    
+}
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     MainCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"mainCell" forIndexPath:indexPath];
@@ -167,8 +240,6 @@
             break;
         case 1:  //  UITableView
         {
-            TableViewVC *tableView = [[TableViewVC alloc]init];
-            [self.navigationController pushViewController:tableView animated:YES];
         }
             break;
         case 2: //  ReactiveCocoa
@@ -200,10 +271,6 @@
             break;
         case 7:  //  UITableView
         {
-            TableViewVC *tableView = [[TableViewVC alloc]init];
-            [self.navigationController pushViewController:tableView animated:YES];
-            
-            
         }
             break;
         case 8:
@@ -261,8 +328,6 @@
             break;
         case 17:  //  获取系统相册 及图片
         {
-            SystemPhotos *photos = [[SystemPhotos alloc]init];
-            [self.navigationController pushViewController:photos animated:YES];
         }
             break;
         case 18:  //  masonry demo
@@ -399,6 +464,110 @@
 
     }
 }
+
+
+//  =======
+
+//  地址反编码
+- (void)locationFromAddress:(NSString *)address {
+    
+    self.geoCodeSearch = [[BMKGeoCodeSearch alloc]init];
+    self.geoCodeSearch.delegate = self;
+    BMKGeoCodeSearchOption *codeSearchOption = [[BMKGeoCodeSearchOption alloc]init];
+    codeSearchOption.city = @"广州市";
+    codeSearchOption.address = @"天河区冼村路5号凯华国际中心";
+    BOOL flag = [self.geoCodeSearch geoCode:codeSearchOption];
+    if (flag) {
+        NSLog(@"检索成功");
+    }else{
+        NSLog(@"检索失败");
+    }
+    
+    
+}
+
+- (void)onGetGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error {
+    if (error == BMK_OPEN_NO_ERROR) {
+        
+        NSLog(@"成功");
+    }else{
+        NSLog(@"出错");
+    }
+    NSLog(@"latitude = %f long = %f ",result.location.latitude,result.location.longitude);
+    [_mapView setCenterCoordinate:result.location];
+}
+#pragma mark - -
+- (void)onGetPoiResult:(BMKPoiSearch *)searcher result:(BMKPoiResult *)poiResult errorCode:(BMKSearchErrorCode)errorCode
+{
+    NSLog(@"poiResult = %u",errorCode);
+}
+
+- (void)onGetPoiDetailResult:(BMKPoiSearch *)searcher result:(BMKPoiDetailResult *)poiDetailResult errorCode:(BMKSearchErrorCode)errorCode
+{
+    NSLog(@"poiDetailResult = %u",errorCode);
+    
+}
+#pragma mark - - BMKLocationServiceDelegate
+- (void)didUpdateUserHeading:(BMKUserLocation *)userLocation {
+    //    NSLog(@"latitude = %f longitude = %f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
+    
+    [_mapView updateLocationData:userLocation];
+}
+
+- (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation {
+    
+    [_mapView updateLocationData:userLocation];
+    
+    [_mapView setCenterCoordinate:userLocation.location.coordinate animated:YES];
+    [_location stopUserLocationService];
+    
+    //    NSLog(@"latitude = %f longitude = %f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
+    
+    //  城市搜索
+    //    BMKCitySearchOption *citySearchOption = [[BMKCitySearchOption alloc]init];
+    //    //    citySearchOption.city = @"广州市";
+    //    //    citySearchOption.pageIndex = 1;
+    //    //    citySearchOption.pageCapacity = 20;
+    //    citySearchOption.keyword = @"小吃";
+    //    BOOL flag = [search poiSearchInCity:citySearchOption];
+    //
+    //    if (flag) {
+    //        NSLog(@"成功");
+    //    }else{
+    //        NSLog(@"失败");
+    //    }
+    
+    //  附近搜索
+    //    BMKNearbySearchOption *nearBySearchOption = [[BMKNearbySearchOption alloc]init];
+    //    nearBySearchOption.pageCapacity = 20;
+    //    nearBySearchOption.pageIndex = 0;
+    //    nearBySearchOption.location = userLocation.location.coordinate;
+    //    nearBySearchOption.radius = 1000;
+    //    nearBySearchOption.sortType = BMK_POI_SORT_BY_DISTANCE;
+    //    BOOL flag = [self.search poiSearchNearBy:nearBySearchOption];
+    //    if (flag) {
+    //        NSLog(@"成功");
+    //    }else{
+    //        NSLog(@"失败");
+    //    }
+    //    [_mapView updateLocationData:userLocation];
+    
+    
+}
+#pragma mark - -
+- (void)mapView:(BMKMapView *)mapView onClickedMapBlank:(CLLocationCoordinate2D)coordinate {
+    NSLog(@"map view: click blank");
+    
+    
+    [_mapView setCenterCoordinate:coordinate animated:YES];
+}
+
+- (void)mapview:(BMKMapView *)mapView onDoubleClick:(CLLocationCoordinate2D)coordinate {
+    NSLog(@"map view: double click");
+    
+    [_mapView setCenterCoordinate:coordinate animated:YES];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
